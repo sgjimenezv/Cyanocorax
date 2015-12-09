@@ -144,9 +144,11 @@
                                                                     </li>
                                                                 {%elif hijo.hijos != False %}
                                                                     <li class="panel-heading">
+                                                                        {% if hijo.elemento.texto %}
                                                                         <a  data-toggle="collapse" data-parent="#sub_acordeon" href="#{{hijo.elemento.texto|slugify }}">
                                                                             {{hijo.elemento.texto}}<span class="caret"></span>
                                                                         </a>
+                                                                        {% endif %}
                                                                         {%if forloop.first %}
                                                                         <div id="{{hijo.elemento.texto|slugify }}" class="panel-collapse collapse in">
                                                                         {%else%}
