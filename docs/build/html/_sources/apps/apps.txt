@@ -1,0 +1,4 @@
+Aplicaciones
+============
+.. automodule:: cyanocorax.config
+    :members:

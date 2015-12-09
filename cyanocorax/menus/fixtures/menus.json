@@ -1,0 +1,165 @@
+[
+{
+    "fields": {
+        "texto": "Ingresar",
+        "aprobacion": "an",
+        "peso": 9999,
+        "clase": "se",
+        "destino": "/login",
+        "padre": null,
+        "rol": [],
+        "_order": 0
+    },
+    "model": "menus.menuitem",
+    "pk": 1
+},
+{
+    "fields": {
+        "texto": "Cerrar sesi\u00f3n",
+        "aprobacion": "au",
+        "peso": 9999,
+        "clase": "se",
+        "destino": "/logout",
+        "padre": null,
+        "rol": [
+            6,
+            5,
+            4,
+            3,
+            1,
+            2
+        ],
+        "_order": 1
+    },
+    "model": "menus.menuitem",
+    "pk": 2
+},
+{
+    "fields": {
+        "texto": "Corpus",
+        "aprobacion": "au",
+        "peso": 10,
+        "clase": "se",
+        "destino": "/corpus",
+        "padre": null,
+        "rol": [
+            6,
+            5,
+            4,
+            3,
+            1,
+            2
+        ],
+        "_order": 3
+    },
+    "model": "menus.menuitem",
+    "pk": 8
+},
+{
+    "fields": {
+        "texto": "Explorar corpus",
+        "aprobacion": "au",
+        "peso": 0,
+        "clase": "en",
+        "destino": "/corpus/explorar",
+        "padre": 8,
+        "rol": [
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "_order": 0
+    },
+    "model": "menus.menuitem",
+    "pk": 9
+},
+{
+    "fields": {
+        "texto": "Administrar corpus",
+        "aprobacion": "au",
+        "peso": 10,
+        "clase": "en",
+        "destino": "/corpus/administrar",
+        "padre": 8,
+        "rol": [
+            4,
+            5,
+            6
+        ],
+        "_order": 1
+    },
+    "model": "menus.menuitem",
+    "pk": 10
+},
+{
+    "fields": {
+        "texto": "Crear corpus",
+        "aprobacion": "au",
+        "peso": 0,
+        "clase": "it",
+        "destino": "/corpus/crear",
+        "padre": 10,
+        "rol": [
+            5,
+            6
+        ],
+        "_order": 0
+    },
+    "model": "menus.menuitem",
+    "pk": 11
+},
+{
+    "fields": {
+        "texto": "Modificar corpus",
+        "aprobacion": "au",
+        "peso": 10,
+        "clase": "it",
+        "destino": "/corpus/modificar",
+        "padre": 10,
+        "rol": [
+            4,
+            5,
+            6
+        ],
+        "_order": 1
+    },
+    "model": "menus.menuitem",
+    "pk": 12
+},
+{
+    "fields": {
+        "texto": "NavBar",
+        "items": [
+            1,
+            9,
+            11,
+            2,
+            10,
+            12,
+            8
+        ],
+        "rol": []
+    },
+    "model": "menus.menu",
+    "pk": 1
+},
+{
+    "fields": {
+        "texto": "SideBar1",
+        "items": [
+            1,
+            9,
+            11,
+            2,
+            10,
+            12,
+            8
+        ],
+        "rol": []
+    },
+    "model": "menus.menu",
+    "pk": 2
+}
+]
