@@ -1,0 +1,212 @@
+<html lang="es">
+
+{% load staticfiles %}
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta content="" name="Plataforma para manejo de corpus orales">
+        <meta content="" name="Instituto Caro y Cuervo">
+        <link href="{% static 'img/favicon.ico'%}" rel="icon">
+
+        <title>Cyanocorax:: Plataforma para manejo de corpus orales</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="{% static 'bootstrap/css/dashboard.css' %}">
+        <!-- Custom styles for this proyect -->
+        <link rel="stylesheet" href="{% static 'css/general.css' %}">
+
+        <!-- CSS adicionales cargados por cada plantilla -->
+        {% block customcss %}
+        {% endblock customcss%}
+
+    </head>
+
+    <body {%block bodypoperties%}{%endblock%}>
+
+        {%block navbar%}
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="/" class="navbar-brand">
+                <img id="minilogo" src="{% static 'img/favicon.ico'%}" alt="Instituto Caro y Cuervo" height="16" width="16">
+                {% if user.is_authenticated %}
+                {{fullname|capfirst}},
+                {% endif %}
+                Bienvenido al Corpus Oral ICC.
+              </a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+
+
+                    {% for element in NavBar%}
+                        {% if element.hijos == False %}
+                            <li>
+                                <a href="{{element.elemento.destino}}">{{element.elemento.texto}}</a>
+                            </li>
+                        {%elif element.hijos != False %}
+                            <li class="dropdown">
+                                <a
+                                    class="dropdown-toggle"
+                                    aria-expanded="false"
+                                    aria-haspopup="true"
+                                    role="button"
+                                    data-toggle="dropdown"
+                                    href="#"
+                                >
+                                    {{element.elemento.texto}}
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    {% for hijo in element.hijos %}
+
+                                        {% if hijo.hijos == False%}
+                                            <li>
+                                                <a href="{{hijo.elemento.destino}}">
+                                                    {{hijo.elemento.texto}}
+                                                </a>
+                                            </li>
+                                        {% elif hijo.elemento.clase == 'en' %}
+                                            <li class="dropdown-header">
+                                                {{hijo.elemento.texto}}
+                                            </li>
+                                                {% for nieto in hijo.hijos%}
+                                                    {% if nieto %}
+                                                        <li>
+                                                            <a href="{{nieto.elemento.destino}}">
+                                                                {{nieto.elemento.texto}}
+                                                            </a>
+                                                        </li>
+                                                    {% endif %}
+                                                {%endfor%}
+                                        {%endif%}
+
+                                    {%endfor%}
+                                </ul>
+                            </li>
+                        {%endif%}
+                    {%endfor%}
+
+                </ul>
+                <form class="navbar-form navbar-right">
+                <input type="text" placeholder="Buscar..." class="form-control">
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        {%endblock navbar%}
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                {%block sidebar%}
+                <div class="col-sm-3 col-md-2 sidebar">
+
+                    <div class="panel-group" id="acordeon">
+                        <ul class="acordion">
+                            {% for element in NavBar%}
+                                {% if element.hijos == False %}
+                                        <li class="panel-heading">
+                                            <a   href="{{element.elemento.destino}}">{{element.elemento.texto}}</a>
+                                        </li>
+                                {%elif element.hijos != False %}
+                                        <li class="panel-heading">
+                                            <a  data-toggle="collapse" data-parent="#acordeon" href="#{{element.elemento.texto|slugify }}">
+                                                {{element.elemento.texto}}<span class="caret"></span>
+                                            </a>
+
+                                            {%if forloop.first %}
+                                            <div id="{{element.elemento.texto|slugify }}" class="panel-collapse collapse in">
+                                            {%else%}
+                                            <div id="{{element.elemento.texto|slugify }}" class="panel-collapse collapse">
+                                            {%endif%}
+                                                <div class="panel-body">
+                                                    <div class="panel-group" id="sub_acordeon">
+                                                        <ul class="sub_acordion">
+                                                            {% for hijo in element.hijos%}
+                                                                {% if hijo.hijos == False %}
+                                                                    <li class="panel-heading">
+                                                                        <a   href="{{hijo.elemento.destino}}">{{hijo.elemento.texto}}</a>
+                                                                    </li>
+                                                                {%elif hijo.hijos != False %}
+                                                                    <li class="panel-heading">
+                                                                        <a  data-toggle="collapse" data-parent="#sub_acordeon" href="#{{hijo.elemento.texto|slugify }}">
+                                                                            {{hijo.elemento.texto}}<span class="caret"></span>
+                                                                        </a>
+                                                                        {%if forloop.first %}
+                                                                        <div id="{{hijo.elemento.texto|slugify }}" class="panel-collapse collapse in">
+                                                                        {%else%}
+                                                                        <div id="{{hijo.elemento.texto|slugify }}" class="panel-collapse collapse">
+                                                                        {%endif%}
+                                                                            <div class="panel-body">
+                                                                                <ul>
+                                                                                    {% for nieto in hijo.hijos%}
+                                                                                        <li>
+                                                                                            <a  href="{{nieto.elemento.destino}}">{{nieto.elemento.texto}}</a>
+                                                                                        </li>
+                                                                                    {%endfor%}
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                {%endif%}
+                                                            {%endfor%}
+                                                        </ul>
+                                                    <div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                {%endif%}
+                            {%endfor%}
+                        </ul>
+                    </div>
+
+                </div><!--Fin de la clase col-sm-3 col-md-2 sidebar-->
+                {%endblock sidebar%}
+
+                {% block contenedor%}
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+
+                    {% block contenido %}
+                    {% endblock contenido %}
+
+
+                </div><!--Fin de la clase col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-->
+                {% endblock contenedor%}
+
+            </div> <!--Fin de la clase row-->
+
+        <div><!--Fin de la clase container-fluid-->
+
+                <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        {%block footerscripts%}
+        <script src="{%static 'jquery/jquery.min.js'%}"></script>
+        <script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
+        <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+        <script src="{%static 'bootstrap/assets/js/vendor/holder.min.js'%}"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="{%static 'bootstrap/assets/js/ie10-viewport-bug-workaround.js'%}"></script>
+        {%endblock footerscripts%}
+
+
+    </body>
+
+</html>

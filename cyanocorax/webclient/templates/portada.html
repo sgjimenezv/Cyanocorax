@@ -1,0 +1,9 @@
+{% extends "main.html" %}
+{% block contenido%} 
+
+{% autoescape off %}
+{{contenido}}
+{% lorem 7 p %}
+{% endautoescape  %}
+
+{% endblock%}

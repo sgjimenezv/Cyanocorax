@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+{% block customcss%}
+    <link rel="stylesheet" href="{% static 'css/ingresar.css' %}">
+{% endblock customcss%}
+
+{%block sidebar%}
+
+{%endblock sidebar%}
+
+{% block contenedor%}
+<div id="container">
+
+    <h2 style="text-align: center">
+    Cyanocorax :: Plataforma web de administración y consulta del</br>
+    Corpus Oral del Instituto Caro y Cuervo
+    </h2>
+    <hr>
+    <form class="form-signin" action=""  method="post" name="login">
+        <div class="form-signin-heading">
+            <img id="headerlogo" src="{%static 'img/LogoICC.png'%}">
+            <div style="text-align: center">
+            {% autoescape off %}{{state}}{% endautoescape  %}
+            </div>
+        </div>
+        {% csrf_token %}
+
+
+        <label class="sr-only" for="inputEmail">Usuario</label>
+        <input id="inputEmail" class="form-control" type="text"  name="username" autofocus="" required="" placeholder="Usuario" value="{{ username}}">
+        <label class="sr-only" for="inputPassword">Contraseña</label>
+        <input id="inputPassword" class="form-control" type="password" name="password" required="" placeholder="Contraseña" value="">
+
+
+
+        <!--div id="remembermefield" class="loginfield"><label for="rememberme">
+            Recordarme&nbsp;</label><input type="checkbox" name="rememberme" id="rememberme">
+        </div-->
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit"  value="ingresar">Iniciar sesión</button>
+            {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+            {% endif %}
+            <!--a href="http://campache.caroycuervo.gov.co/register.php" id="registerbutton" class="button" rel="nohtml">Registrar</a-->
+        </div>
+    </form>
+</div>
+
+{% endblock contenedor%}
