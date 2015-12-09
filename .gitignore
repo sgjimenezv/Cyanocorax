@@ -2,5 +2,5 @@ __pycache__/
 *.pyc
 cyanocorax/config/settings/secrets.json
 cyanocorax/webclient/fixtures/auth.json
-cyanocorax/static
-cyanocorax/*/static
+#cyanocorax/static
+#cyanocorax/*/static

@@ -1,0 +1,132 @@
+#minilogo {
+    display: inline;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+li.dropdown{
+    border-left: 1px solid green;
+    border-right: 1px solid green;
+    height: 59px;
+}
+
+li.dropdown-header {
+    background: #428bca none repeat scroll 0 0;
+    color: #eee;
+    display: block;
+    font-size: 12px;
+    line-height: 1.42857;
+    padding: 3px 20px;
+    white-space: nowrap;
+}
+
+.sidebar #acordeon{
+    margin-left: -20px;
+    margin-right: -21px;
+}
+
+.sidebar li.panel-heading{
+    list-style: none;
+    padding:0;
+}
+
+.sidebar li.panel-heading,
+.sidebar li.panel-heading a {
+    background-color: #428BCA;
+    color: #fff;
+}
+
+.sidebar li.panel-heading>a {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.sidebar li .caret{
+    float: right;
+}
+
+.sidebar #acordeon .panel-body{
+    background-color: #F5F5F5;
+    margin-left: -39px;
+    padding: 0;
+}
+
+#sub_acordeon{
+    margin-bottom: 0;
+}
+
+#sub_acordeon li.panel-heading ul li a{
+    padding: 10px 20px;
+    display: block;
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #337ab7;
+    color:#337ab7;
+}
+
+.sidebar ul.acordion{
+    padding: 0;
+}
+
+.sidebar  li.panel-heading  li.panel-heading>a{
+    background-color: #EEE;
+    color: 23527C;
+    }
+
+.sidebar #sub_acordeon{
+
+}
+
+.velo{
+    bottom: 0;
+    left: 0;
+    outline: 0 none;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1050;
+    opacity: 0.85;
+    background: #aaa none repeat scroll 0 0;
+}
+
+.popup{
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    margin-left: 25%;
+    margin-top: 10%;
+    opacity: 1;
+    outline: 0 none;
+    position: relative;
+    width: 50%;
+}
+
+ul.dropdown-content{
+    margin-top: 1em;
+    padding: 0;
+}
+
+ul.dropdown-content li.dropdown{
+    background: #428bca none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+    height: auto;
+    list-style-type: none;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    text-align: center;
+}
+
+ul.dropdown-content li.dropdown a{
+    color: #fff;
+}
+
+ul.dropdown-content li.dropdown li{
+    color: #000;
+}
