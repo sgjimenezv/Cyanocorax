@@ -1,0 +1,668 @@
+[
+{
+    "fields": {
+        "content_type": 1,
+        "codename": "add_logentry",
+        "name": "Can add log entry"
+    },
+    "pk": 73,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 1,
+        "codename": "change_logentry",
+        "name": "Can change log entry"
+    },
+    "pk": 74,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 1,
+        "codename": "delete_logentry",
+        "name": "Can delete log entry"
+    },
+    "pk": 75,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 2,
+        "codename": "add_permission",
+        "name": "Can add permission"
+    },
+    "pk": 76,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 2,
+        "codename": "change_permission",
+        "name": "Can change permission"
+    },
+    "pk": 77,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 2,
+        "codename": "delete_permission",
+        "name": "Can delete permission"
+    },
+    "pk": 78,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 3,
+        "codename": "add_group",
+        "name": "Can add group"
+    },
+    "pk": 79,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 3,
+        "codename": "change_group",
+        "name": "Can change group"
+    },
+    "pk": 80,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 3,
+        "codename": "delete_group",
+        "name": "Can delete group"
+    },
+    "pk": 81,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 4,
+        "codename": "add_user",
+        "name": "Can add user"
+    },
+    "pk": 82,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 4,
+        "codename": "change_user",
+        "name": "Can change user"
+    },
+    "pk": 83,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 4,
+        "codename": "delete_user",
+        "name": "Can delete user"
+    },
+    "pk": 84,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 5,
+        "codename": "add_contenttype",
+        "name": "Can add content type"
+    },
+    "pk": 85,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 5,
+        "codename": "change_contenttype",
+        "name": "Can change content type"
+    },
+    "pk": 86,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 5,
+        "codename": "delete_contenttype",
+        "name": "Can delete content type"
+    },
+    "pk": 87,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 6,
+        "codename": "add_session",
+        "name": "Can add session"
+    },
+    "pk": 88,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 6,
+        "codename": "change_session",
+        "name": "Can change session"
+    },
+    "pk": 89,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 6,
+        "codename": "delete_session",
+        "name": "Can delete session"
+    },
+    "pk": 90,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 7,
+        "codename": "add_menuitem",
+        "name": "Can add menu item"
+    },
+    "pk": 91,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 7,
+        "codename": "change_menuitem",
+        "name": "Can change menu item"
+    },
+    "pk": 92,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 7,
+        "codename": "delete_menuitem",
+        "name": "Can delete menu item"
+    },
+    "pk": 93,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 8,
+        "codename": "add_menu",
+        "name": "Can add menu"
+    },
+    "pk": 94,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 8,
+        "codename": "change_menu",
+        "name": "Can change menu"
+    },
+    "pk": 95,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 8,
+        "codename": "delete_menu",
+        "name": "Can delete menu"
+    },
+    "pk": 96,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 9,
+        "codename": "add_pagina",
+        "name": "Can add pagina"
+    },
+    "pk": 97,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 9,
+        "codename": "change_pagina",
+        "name": "Can change pagina"
+    },
+    "pk": 98,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 9,
+        "codename": "delete_pagina",
+        "name": "Can delete pagina"
+    },
+    "pk": 99,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 10,
+        "codename": "add_noticia",
+        "name": "Can add noticia"
+    },
+    "pk": 100,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 10,
+        "codename": "change_noticia",
+        "name": "Can change noticia"
+    },
+    "pk": 101,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 10,
+        "codename": "delete_noticia",
+        "name": "Can delete noticia"
+    },
+    "pk": 102,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 11,
+        "codename": "add_permisos",
+        "name": "Can add permisos"
+    },
+    "pk": 103,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 11,
+        "codename": "change_permisos",
+        "name": "Can change permisos"
+    },
+    "pk": 104,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 11,
+        "codename": "delete_permisos",
+        "name": "Can delete permisos"
+    },
+    "pk": 105,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "add_permisoscorpus",
+        "name": "Can add permisos corpus"
+    },
+    "pk": 106,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "change_permisoscorpus",
+        "name": "Can change permisos corpus"
+    },
+    "pk": 107,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "delete_permisoscorpus",
+        "name": "Can delete permisos corpus"
+    },
+    "pk": 108,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "creCorp_Permiso",
+        "name": "Crear corpus"
+    },
+    "pk": 109,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "addCorp_Permiso",
+        "name": "Agregar elemento a corpus"
+    },
+    "pk": 110,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "modCorp_Permiso",
+        "name": "Modificar informaci\u00f3n de corpus"
+    },
+    "pk": 111,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "verCorp_Permiso",
+        "name": "Ver corpus"
+    },
+    "pk": 112,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "veeCorp_Permiso",
+        "name": "Ver elemento de corpus"
+    },
+    "pk": 113,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "borCorp_Permiso",
+        "name": "Borrar corpus"
+    },
+    "pk": 114,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "susCorp_Permiso",
+        "name": "Borrar elemento de corpus"
+    },
+    "pk": 115,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "repCorp_Permiso",
+        "name": "Reproducir corpus"
+    },
+    "pk": 116,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "reeCorp_Permiso",
+        "name": "Reproducir elemento de corpus"
+    },
+    "pk": 117,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "desCorp_Permiso",
+        "name": "Descargar corpus"
+    },
+    "pk": 118,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "deeCorp_Permiso",
+        "name": "Descargar elemento de corpus"
+    },
+    "pk": 119,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 12,
+        "codename": "admCorp_Permiso",
+        "name": "Administrar corpus"
+    },
+    "pk": 120,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 13,
+        "codename": "add_permisosinvestigaciones",
+        "name": "Can add permisos investigaciones"
+    },
+    "pk": 121,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 13,
+        "codename": "change_permisosinvestigaciones",
+        "name": "Can change permisos investigaciones"
+    },
+    "pk": 122,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 13,
+        "codename": "delete_permisosinvestigaciones",
+        "name": "Can delete permisos investigaciones"
+    },
+    "pk": 123,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 13,
+        "codename": "creInv_Permiso",
+        "name": "Crear investigaci\u00f3n"
+    },
+    "pk": 124,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 13,
+        "codename": "delInv_Permiso",
+        "name": "Borrar investigacion"
+    },
+    "pk": 125,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 13,
+        "codename": "modInv_Permiso",
+        "name": "Modificar investigacion"
+    },
+    "pk": 126,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 13,
+        "codename": "verInv_permiso",
+        "name": "Ver investigaci\u00f3n"
+    },
+    "pk": 127,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 13,
+        "codename": "addInv_permiso",
+        "name": "Agregar Investigacion al corpus"
+    },
+    "pk": 128,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 13,
+        "codename": "eliInv_permiso",
+        "name": "Eliminar Investigacion del corpus"
+    },
+    "pk": 129,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 14,
+        "codename": "add_permisosproductos",
+        "name": "Can add permisos productos"
+    },
+    "pk": 130,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 14,
+        "codename": "change_permisosproductos",
+        "name": "Can change permisos productos"
+    },
+    "pk": 131,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 14,
+        "codename": "delete_permisosproductos",
+        "name": "Can delete permisos productos"
+    },
+    "pk": 132,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 14,
+        "codename": "creProd_Permiso",
+        "name": "Crear producto"
+    },
+    "pk": 133,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 14,
+        "codename": "delProd_Permiso",
+        "name": "Borrar producto"
+    },
+    "pk": 134,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 14,
+        "codename": "modProd_Permiso",
+        "name": "Modificar producto"
+    },
+    "pk": 135,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 14,
+        "codename": "verProd_permiso",
+        "name": "Ver producto"
+    },
+    "pk": 136,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 14,
+        "codename": "addProd_Permiso",
+        "name": "Agregar productos al corpus, las investigaciones o los audios"
+    },
+    "pk": 137,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 14,
+        "codename": "eliProd_Permiso",
+        "name": "Eliminar productos del corpus, las investigaciones o los audios"
+    },
+    "pk": 138,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 15,
+        "codename": "add_permisosaudios",
+        "name": "Can add permisos audios"
+    },
+    "pk": 139,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 15,
+        "codename": "change_permisosaudios",
+        "name": "Can change permisos audios"
+    },
+    "pk": 140,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 15,
+        "codename": "delete_permisosaudios",
+        "name": "Can delete permisos audios"
+    },
+    "pk": 141,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 15,
+        "codename": "addAudio_Permiso",
+        "name": "Agregar audios al corpus"
+    },
+    "pk": 142,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 15,
+        "codename": "delAudio_Permiso",
+        "name": "Eliminar audios del corpus"
+    },
+    "pk": 143,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 15,
+        "codename": "desAudio_Permiso",
+        "name": "Descargar audio"
+    },
+    "pk": 144,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 15,
+        "codename": "repAudio_Permiso",
+        "name": "Reproducir audio"
+    },
+    "pk": 145,
+    "model": "auth.permission"
+},
+{
+    "fields": {
+        "content_type": 15,
+        "codename": "marAudio_Permiso",
+        "name": "Marcar"
+    },
+    "pk": 146,
+    "model": "auth.permission"
+}
+]

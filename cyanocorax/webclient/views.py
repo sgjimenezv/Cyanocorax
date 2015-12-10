@@ -1,5 +1,5 @@
 from django.core.context_processors import csrf
-from menus.models import Menu
+from menus.views import auth_menu
 from paginas.models import Pagina
 from django.shortcuts import render, render_to_response,  get_object_or_404
 from django.contrib.auth import authenticate, login
@@ -9,7 +9,7 @@ from django.http.response import HttpResponseRedirect
 def one_of_this_perm(permisos: list,  request):
     '''
      Esta función es provisional, pero no se si sea útil  la idea es que
-     ayude a controlar algunas  el acceso  a algunas operaciones pero en
+     ayude a controlar el acceso  a algunas operaciones pero en
      todo caso sería más  util en la aplicación de manejo de los corpus
      o las  colecciones directamente.
     '''
@@ -53,17 +53,6 @@ def ingreso(request):
     context['next'] = next
 
     return render_to_response('ingreso.html', context)
-
-
-def auth_menu(request, menu):
-    auth_menu = []
-    secciones = Menu.objects.get(texto=menu).items.all()
-    secciones = secciones.filter(clase='se').order_by('peso')
-    for seccion in secciones:
-        seccion.inject_request(request)
-        if (seccion.is_in_menu(menu) and seccion.element_group_auth()):
-            auth_menu.append(seccion.get_descendencia(menu))
-    return auth_menu
 
 
 def index(request):

@@ -1,13 +1,10 @@
 from mongoengine import *
-from datetime import datetime
-from django.db.models import Q
-from django.contrib.auth.models import Group
 
 # Create your models here.
 
-
-class Producto(EmbeddedDocument):
+class Producto(Document):
     titulo = StringField(max_length=256)
     tipo = StringField(max_length=256)
+    descripcion = StringField()
     referencia = StringField()
-    enlace = StringField(max_length=256)
+    enlace = URLField()

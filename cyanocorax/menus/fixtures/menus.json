@@ -1,26 +1,23 @@
 [
 {
     "fields": {
-        "texto": "Ingresar",
-        "aprobacion": "an",
         "peso": 9999,
         "clase": "se",
-        "destino": "/login",
-        "padre": null,
+        "aprobacion": "an",
         "rol": [],
+        "destino": "/login",
+        "texto": "Ingresar",
+        "padre": null,
         "_order": 0
     },
-    "model": "menus.menuitem",
-    "pk": 1
+    "pk": 1,
+    "model": "menus.menuitem"
 },
 {
     "fields": {
-        "texto": "Cerrar sesi\u00f3n",
-        "aprobacion": "au",
         "peso": 9999,
         "clase": "se",
-        "destino": "/logout",
-        "padre": null,
+        "aprobacion": "au",
         "rol": [
             6,
             5,
@@ -29,19 +26,19 @@
             1,
             2
         ],
+        "destino": "/logout",
+        "texto": "Cerrar sesi\u00f3n",
+        "padre": null,
         "_order": 1
     },
-    "model": "menus.menuitem",
-    "pk": 2
+    "pk": 2,
+    "model": "menus.menuitem"
 },
 {
     "fields": {
-        "texto": "Corpus",
-        "aprobacion": "au",
         "peso": 10,
         "clase": "se",
-        "destino": "/corpus",
-        "padre": null,
+        "aprobacion": "au",
         "rol": [
             6,
             5,
@@ -50,116 +47,330 @@
             1,
             2
         ],
+        "destino": "/corpus",
+        "texto": "Corpus",
+        "padre": null,
+        "_order": 2
+    },
+    "pk": 8,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
+        "peso": 0,
+        "clase": "en",
+        "aprobacion": "au",
+        "rol": [
+            6,
+            5,
+            4,
+            3,
+            1,
+            2
+        ],
+        "destino": "/corpus/explorar",
+        "texto": "Explorar corpus",
+        "padre": 8,
+        "_order": 0
+    },
+    "pk": 9,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
+        "peso": 10,
+        "clase": "en",
+        "aprobacion": "au",
+        "rol": [
+            4,
+            5,
+            6
+        ],
+        "destino": "/corpus/administrar",
+        "texto": "Administrar corpus",
+        "padre": 8,
+        "_order": 1
+    },
+    "pk": 10,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
+        "peso": 0,
+        "clase": "it",
+        "aprobacion": "au",
+        "rol": [
+            5,
+            6
+        ],
+        "destino": "/corpus/crear",
+        "texto": "Crear corpus",
+        "padre": 10,
+        "_order": 0
+    },
+    "pk": 11,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
+        "peso": 10,
+        "clase": "it",
+        "aprobacion": "au",
+        "rol": [
+            4,
+            5,
+            6
+        ],
+        "destino": "/corpus/modificar",
+        "texto": "Modificar corpus",
+        "padre": 10,
+        "_order": 1
+    },
+    "pk": 12,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
+        "peso": 20,
+        "clase": "se",
+        "aprobacion": "au",
+        "rol": [
+            6,
+            5,
+            4,
+            3,
+            1,
+            2
+        ],
+        "destino": "/",
+        "texto": "Investigaciones",
+        "padre": null,
         "_order": 3
     },
-    "model": "menus.menuitem",
-    "pk": 8
+    "pk": 13,
+    "model": "menus.menuitem"
 },
 {
     "fields": {
-        "texto": "Explorar corpus",
+        "peso": 10,
+        "clase": "en",
         "aprobacion": "au",
+        "rol": [
+            4,
+            5,
+            6
+        ],
+        "destino": "/investigaciones/administrar",
+        "texto": "Administrar investigaciones",
+        "padre": 13,
+        "_order": 0
+    },
+    "pk": 14,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
+        "peso": 0,
+        "clase": "it",
+        "aprobacion": "au",
+        "rol": [
+            4,
+            5,
+            6
+        ],
+        "destino": "/investigaciones/crear",
+        "texto": "Crear investigaci\u00f3n",
+        "padre": 14,
+        "_order": 0
+    },
+    "pk": 15,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
+        "peso": 2,
+        "clase": "it",
+        "aprobacion": "au",
+        "rol": [
+            4,
+            5,
+            6
+        ],
+        "destino": "/investigaciones/modificar",
+        "texto": "Modificar investigaci\u00f3n",
+        "padre": 14,
+        "_order": 1
+    },
+    "pk": 16,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
         "peso": 0,
         "clase": "en",
-        "destino": "/corpus/explorar",
-        "padre": 8,
+        "aprobacion": "au",
         "rol": [
-            2,
+            6,
+            5,
+            4,
             3,
-            4,
-            5,
-            6
+            1,
+            2
         ],
-        "_order": 0
+        "destino": "/investigaciones/explorar",
+        "texto": "Explorar investigaciones",
+        "padre": 13,
+        "_order": 1
     },
-    "model": "menus.menuitem",
-    "pk": 9
+    "pk": 17,
+    "model": "menus.menuitem"
 },
 {
     "fields": {
-        "texto": "Administrar corpus",
+        "peso": 30,
+        "clase": "se",
         "aprobacion": "au",
+        "rol": [
+            6,
+            5,
+            4,
+            3,
+            1,
+            2
+        ],
+        "destino": "/",
+        "texto": "Productos",
+        "padre": null,
+        "_order": 4
+    },
+    "pk": 18,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
         "peso": 10,
         "clase": "en",
-        "destino": "/corpus/administrar",
-        "padre": 8,
+        "aprobacion": "au",
         "rol": [
             4,
             5,
             6
         ],
-        "_order": 1
-    },
-    "model": "menus.menuitem",
-    "pk": 10
-},
-{
-    "fields": {
-        "texto": "Crear corpus",
-        "aprobacion": "au",
-        "peso": 0,
-        "clase": "it",
-        "destino": "/corpus/crear",
-        "padre": 10,
-        "rol": [
-            5,
-            6
-        ],
+        "destino": "/productos/administrar",
+        "texto": "Administrar productos",
+        "padre": 18,
         "_order": 0
     },
-    "model": "menus.menuitem",
-    "pk": 11
+    "pk": 19,
+    "model": "menus.menuitem"
 },
 {
     "fields": {
-        "texto": "Modificar corpus",
-        "aprobacion": "au",
-        "peso": 10,
+        "peso": 0,
         "clase": "it",
-        "destino": "/corpus/modificar",
-        "padre": 10,
+        "aprobacion": "au",
         "rol": [
             4,
             5,
             6
         ],
-        "_order": 1
+        "destino": "/productos/crear",
+        "texto": "Crear producto",
+        "padre": 19,
+        "_order": 0
     },
-    "model": "menus.menuitem",
-    "pk": 12
+    "pk": 20,
+    "model": "menus.menuitem"
 },
 {
     "fields": {
+        "peso": 20,
+        "clase": "it",
+        "aprobacion": "au",
+        "rol": [
+            4,
+            5,
+            6
+        ],
+        "destino": "/productos/modificar",
+        "texto": "Modificar producto",
+        "padre": 19,
+        "_order": 1
+    },
+    "pk": 21,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
+        "peso": 0,
+        "clase": "en",
+        "aprobacion": "au",
+        "rol": [
+            6,
+            5,
+            4,
+            3,
+            1,
+            2
+        ],
+        "destino": "/productos/explorar",
+        "texto": "Explorar productos",
+        "padre": 18,
+        "_order": 1
+    },
+    "pk": 22,
+    "model": "menus.menuitem"
+},
+{
+    "fields": {
+        "rol": [],
         "texto": "NavBar",
         "items": [
-            1,
-            9,
+            19,
+            15,
             11,
+            14,
+            1,
+            20,
+            9,
+            12,
             2,
             10,
-            12,
-            8
-        ],
-        "rol": []
+            17,
+            16,
+            8,
+            13,
+            18
+        ]
     },
-    "model": "menus.menu",
-    "pk": 1
+    "pk": 1,
+    "model": "menus.menu"
 },
 {
     "fields": {
+        "rol": [],
         "texto": "SideBar1",
         "items": [
             1,
-            9,
+            20,
+            19,
+            15,
+            14,
             11,
-            2,
-            10,
+            9,
             12,
-            8
-        ],
-        "rol": []
+            21,
+            2,
+            17,
+            16,
+            10,
+            22,
+            8,
+            13,
+            18
+        ]
     },
-    "model": "menus.menu",
-    "pk": 2
+    "pk": 2,
+    "model": "menus.menu"
 }
 ]

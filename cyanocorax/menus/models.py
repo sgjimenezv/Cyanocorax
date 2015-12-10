@@ -44,6 +44,7 @@ class MenuItem(models.Model):
         Esta función comprueba si el usuario esta autorizado para ver este
         elemento
         '''
+
         if (self.request.user.is_anonymous() and
                 self.aprobacion == 'an'or self.aprobacion == 'am'):
             return True
