@@ -10,13 +10,13 @@ class Tag(EmbeddedDocument):
      nombre = StringField(max_length=60,  required=True,  unique=True)
      nombreCSV = StringField(max_length=60,  required=True,  unique=True)
      equivalenteTEI = StringField(max_length=60)
-     equivalenteIMDI =StringField(max_length=60)
-     equivalenteOLAC =StringField(max_length=60)
-     obligatorio = StringField(max_length=60)
-     indexar = StringField(max_length=60)
-#     valor =
+     equivalenteIMDI = StringField(max_length=60)
+     equivalenteOLAC = StringField(max_length=60)
+     obligatorio = BooleanField(required=True)
+     indexar = BooleanField(required=True)
+     valor = DynamicField(required=True)
 
-class CategoriaDeMetadatos(DynamicEmbeddedDocument):
+class CategoriaDeMetadatos(Document):
      nombre = StringField(max_length=60,  required=True,  unique=True)
      nombreCSV = StringField(max_length=60,  required=True,  unique=True)
      equivalenteTEI = StringField(max_length=60)
@@ -26,7 +26,9 @@ class CategoriaDeMetadatos(DynamicEmbeddedDocument):
 
 class Corpus(DynamicDocument):
     def create_menu_item(self):
-        "Crear la entrada de menu cuando se cree la colección"
+        '''
+        Crea la entrada de menu para el corpus.
+        '''
         entrada_menu = MenuItem()
         entrada_menu.texto = self.tituloCorto
         entrada_menu.clase = 'it'
@@ -44,23 +46,40 @@ class Corpus(DynamicDocument):
         Menu.objects.get(texto='SideBar1').items.add(entrada_menu)
 
     def delete_menu_item(self):
+        '''
+        Borra del corpus del menu.
+        '''
         MenuItem.objects.filter(texto=self.tituloCorto).delete()
         "Borrar la entriada del menu cuando se borre la colección"
 
     def guardar(self):
+        '''
+        Guarda el corpus en la base de datos y crea la entrada de menu
+        correspondiente
+        '''
         self.save()
         self.create_menu_item()
 
     def eliminar(self):
+        '''
+        Elimina el corpus y de la base de datos y elimina la entrada de menu
+        correspondiente
+        '''
         self.delete_menu_item()
         self.delete()
 
     titulo = StringField(max_length=60,  required=True,  unique=True)
     tituloCorto = StringField(max_length=30,  required=True)
     creador = StringField(max_length=30,  required=True)
-    fecha_creacion = DateTimeField(default=datetime.now())
+    fechaCreacion = DateTimeField(default=datetime.now())
     descripcionCorta = StringField(max_length=256)
     descripcion = StringField()
 
-    #Definicipon de la estructura de metadatos
-    categoriasDeMetadatos = ListField(EmbeddedDocumentField(Tag))
+    # Definicipon de la estructura de metadatos
+    #categoriasDeMetadatos = ListField(EmbeddedDocumentField(Tag))
+
+    # Ruta a los archivos de audio
+    #rutaArchivos = StringField()
+
+    # Archivos de audio
+    #audios = ListField()
