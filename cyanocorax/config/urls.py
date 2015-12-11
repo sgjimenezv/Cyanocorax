@@ -21,5 +21,7 @@ urlpatterns = [
     url(r'^$', 'webclient.views.index'),
     url(r'^login/$',  'webclient.views.ingreso'),
     url(r'^logout/$', 'django.contrib.auth.views.logout',  {'next_page': '/'}),
-    url(r'^productos/explorar$', 'productos.views.explorar_productos'),
+    url(r'^productos/explorar/$', 'productos.views.explorar_productos'),
+    url(r'^productos/modificar/$', 'productos.views.modificar_productos'),
+    url(r'^productos/detalles/(?P<producto_id>(.*){24})/$', 'productos.views.producto_detalles'),
 ]

@@ -5,11 +5,59 @@ from productos.models import Producto
 Producto.objects.create(
     titulo = "Atlas Lingüístico-Etnográfico de Colombia",
     tipo = "Libro",
-    descripcion = "Atlas en 6 tomos y un manual"
-#    referencia = "Floréz, L., Montes Giraldo, J. J., \
-#    Mora Monroy, S. C., Rodríguez de Montes, M. L., \
-#    Figuero Lorza, J., y Lozano Ramírez, M. \
-#    (1982). Atlas lingüístico -Etnográfico de Colombia. ALEC. \
-#    Bogotá: Instituto Caro y Cuervo."
-#    enlace = "http://www.lenguasdecolombia.gov.co/content/atlas-lingüístico-etnográfico-de-colombia-alec"
+    descripcion = "Atlas en 6 tomos y un manual",
+        referencia = """Floréz, L., Montes Giraldo, J. J.,
+        Mora Monroy, S. C., Rodríguez de Montes, M. L.,
+        Figuero Lorza, J., y Lozano Ramírez, M.
+        (1982). Atlas lingüístico -Etnográfico de Colombia. ALEC.
+        Bogotá: Instituto Caro y Cuervo.""",
+    enlace = "http://www.lenguasdecolombia.gov.co/content/atlas-lingüístico-etnográfico-de-colombia-alec",
+)
+
+Producto.objects.create(
+    titulo = "Otro producto",
+    tipo = "Libro",
+    descripcion = "Atlas en 6 tomos y un manual",
+        referencia = """Floréz, L., Montes Giraldo, J. J.,
+        Mora Monroy, S. C., Rodríguez de Montes, M. L.,
+        Figuero Lorza, J., y Lozano Ramírez, M.
+        (1982). Atlas lingüístico -Etnográfico de Colombia. ALEC.
+        Bogotá: Instituto Caro y Cuervo.""",
+    enlace = "http://www.lenguasdecolombia.gov.co/content/atlas-lingüístico-etnográfico-de-colombia-alec",
+)
+
+Producto.objects.create(
+    titulo = "Tercer producto",
+    tipo = "Libro",
+    descripcion = "Atlas en 6 tomos y un manual",
+        referencia = """Floréz, L., Montes Giraldo, J. J.,
+        Mora Monroy, S. C., Rodríguez de Montes, M. L.,
+        Figuero Lorza, J., y Lozano Ramírez, M.
+        (1982). Atlas lingüístico -Etnográfico de Colombia. ALEC.
+        Bogotá: Instituto Caro y Cuervo.""",
+    enlace = "http://www.lenguasdecolombia.gov.co/content/atlas-lingüístico-etnográfico-de-colombia-alec",
+)
+
+Producto.objects.create(
+    titulo = "Cuarto producto",
+    tipo = "Libro",
+    descripcion = "Atlas en 6 tomos y un manual",
+        referencia = """Floréz, L., Montes Giraldo, J. J.,
+        Mora Monroy, S. C., Rodríguez de Montes, M. L.,
+        Figuero Lorza, J., y Lozano Ramírez, M.
+        (1982). Atlas lingüístico -Etnográfico de Colombia. ALEC.
+        Bogotá: Instituto Caro y Cuervo.""",
+    enlace = "http://www.lenguasdecolombia.gov.co/content/atlas-lingüístico-etnográfico-de-colombia-alec",
+)
+
+Producto.objects.create(
+    titulo = "Quinto producto",
+    tipo = "Libro",
+    descripcion = "Atlas en 6 tomos y un manual",
+        referencia = """Floréz, L., Montes Giraldo, J. J.,
+        Mora Monroy, S. C., Rodríguez de Montes, M. L.,
+        Figuero Lorza, J., y Lozano Ramírez, M.
+        (1982). Atlas lingüístico -Etnográfico de Colombia. ALEC.
+        Bogotá: Instituto Caro y Cuervo.""",
+    enlace = "http://www.lenguasdecolombia.gov.co/content/atlas-lingüístico-etnográfico-de-colombia-alec",
 )

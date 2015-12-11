@@ -1,7 +1,12 @@
 {% extends "main.html" %}
 {% block contenido %}
 
-<h1 style="text-align: center"> Listado general de productos académicos </h1>
+{% if objetivo == 'Detalles' %}
+<h1 style="text-align: center"> Listado  de productos académicos </h1>
+{% endif %}
+{% if objetivo == 'Modificar' %}
+<h1 style="text-align: center"> Seleccione el producto que desea modificar </h1>
+{% endif %}
 <hr/>
 
 
@@ -13,6 +18,7 @@
         <th>Tipo</th>
         <th>Investigación</th>
         <th>Corpus</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -24,6 +30,13 @@
   <td> {{producto.tipo}} </td>
   <td> </td>
   <td> </td>
+  <td>
+    {% if objetivo == 'Modificar' %}
+      <a href=/productos/modifcar/{{producto.id}}>Modificar</a>
+       |
+    {% endif %}
+       <a href=/productos/detalles/?producto_id={{producto.id}}/>Ver detalles</a>
+  </td>
 
 </tr>
 {% endfor %}

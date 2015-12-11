@@ -8,3 +8,8 @@ class Producto(Document):
     descripcion = StringField()
     referencia = StringField()
     enlace = URLField()
+    meta = {
+        'indexes': [
+            {'fields': ('titulo', 'tipo', 'referencia'), 'unique': True}
+        ]
+    }

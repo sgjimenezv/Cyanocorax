@@ -21,3 +21,13 @@ def modificar_productos(request):
     context['NavBar'] = auth_menu(request, 'NavBar')
     context['SideBar1'] = auth_menu(request, 'SideBar1')
     return render(request, 'explorar_productos.html', context)
+
+@login_required(login_url='/login')
+def producto_detalles(request, producto_id):
+    context={}
+    print(">>>>>>>>>>>>>>>>>>producto_id")
+    print(producto_id)
+    context['producto'] = Producto.objects.get(id=producto_id)
+    context['NavBar'] = auth_menu(request, 'NavBar')
+    context['SideBar1'] = auth_menu(request, 'SideBar1')
+    return render(request, 'explorar_productos.html', context)
