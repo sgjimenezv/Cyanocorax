@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block contenido%} 
+
+<ul>
+  
+{% for dato in audio%}
+  <li>{{dato.nombre}}</li>
+  <li>{{dato.audioFile}}</li>
+{% endfor %}
+</ul>
+
+{% endblock%}

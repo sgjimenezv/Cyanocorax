@@ -9,6 +9,33 @@ https://docs.djangoproject.com/en/1.8/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
+from __future__ import absolute_import
+
+# configuracion con redis 
+#BROKER_URL = 'redis://localhost:6379'
+#CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+#CELERY_ACCEPT_CONTENT = ['application/json']
+#CELERY_TASK_SERIALIZER = 'json'
+#CELERY_RESULT_SERIALIZER = 'json'
+
+
+# configuracion con mongodb
+BROKER_URL = 'mongodb://localhost/pruebaCelery'
+CELERY_RESULT_BACKEND = 'mongodb://localhost/'
+CELERY_MONGODB_BACKEND_SETTINGS = {
+    'database': 'pruebaCelery',
+    'taskmeta_collection': 'my_taskmeta_collection',
+}
+
+import mongoengine
+#conexion mongoDB 
+#DATABASE_ROUTERS = ['demoapp.router.CorporaRouter']
+mongoengine.connect("celeryDB")
+
+
+
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -60,6 +87,7 @@ INSTALLED_APPS = (
     'menus',
     'paginas',
     'webclient',
+    'media'
 )
 
 MIDDLEWARE_CLASSES = (
