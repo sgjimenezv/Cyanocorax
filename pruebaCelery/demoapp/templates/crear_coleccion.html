@@ -1,0 +1,183 @@
+{% extends "main.html" %}
+
+{% load staticfiles %}
+
+{% block customcss %}
+    <script src="{%static 'tiny_mce/tiny_mce.js'%}" type="text/javascript"></script>
+    <script>
+    tinyMCE.init({
+        mode: "textareas",
+        theme: "advanced",
+        plugins: "spellchecker,directionality,paste,searchreplace",
+        language: "es",
+        spellchecker_languages : "es",
+        width : "100%",
+    });
+    </script>
+    <script src="{%static 'angularjs/angular.min.js'%}"type="text/javascript"></script>
+{% endblock customcss%}
+
+
+{% block contenido%}
+<h1 style="text-align: center">
+    Crear colecciones
+</h1>
+<hr>
+
+
+<div ng-app="crear_colecciones" ng-controller="colecciones" ng-init="creation_options='webdav'">
+
+
+    <div class="velo" ng-show="dataLoaded==false">
+        <div class="popup">
+            <h3 class="text-center">Procesando<br>
+            <p> Esta operación puede demorar bastante
+            dependiendo de la cantidad de archivos que
+            contenga la colección.</p>
+            <img src="{%static 'img/245.GIF'%}" ></img>
+            {{procesando}}
+            </h3>
+        </div>
+    </div>
+
+
+    <h4 style="color:red; text-align: center" ng-show="exito==true">
+        La colección <span ng-bind="coleccion"></span> se ha creado
+        satisfactoriamente
+    </h4>
+
+    <div style="color:red" ng-show="exito==-1">
+        <h4 style="text-align: center" >
+            <span class="glyphicon glyphicon-warning-sign"></span>
+            Se presentaron los siguientes errores:
+        </h4>
+
+
+        {%verbatim%}
+        {{errores}}
+        {%endverbatim%}
+
+
+        {%verbatim%}
+        <ul>
+          <li ng-repeat="(key, data) in errores">
+              {{data}}:{{key}}
+          </li>
+        </ul>
+     </div>
+
+        {%endverbatim%}
+
+    <form class="form-horizontal" role="form" method="post" action=".">
+
+        {% csrf_token %}
+        <h4 style="color: red; text-align: center;" ng-hide="NombreExiste==-1">
+            <span class="glyphicon glyphicon-warning-sign"></span>
+            Ya existe una colección con ese nombre
+        </h4>
+        <h4 style="color: red; text-align: center;" ng-hide="RutaExiste==-1">
+            <span class="glyphicon glyphicon-warning-sign"></span>
+            Ya existe una colección con esa ruta
+        </h4>
+        {% for field in form %}
+
+            {% if field.id_for_label == 'id_usuario' or field.id_for_label == 'id_password' or field.id_for_label == 'id_verificar_coneccion' %}
+            <div class="form-group" ng-show="datos.collection_creation == 'webdav'">
+            {%else%}
+            <div class="form-group">
+            {%endif%}
+
+                {{ field.errors }}
+                <label for="{{ field.id_for_label }}" class="col-lg-2 control-label">
+                    {{ field.label }}
+                </label>
+                <div class="col-lg-10">
+                    {{ field}}
+                </div>
+            </div>
+
+
+        {% endfor %}
+
+        <button class="btn btn-lg btn-primary btn-block"
+        ng-click="enviar()">Crear</button>
+            {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+            {% endif %}
+
+            <!--a href="http://campache.caroycuervo.gov.co/register.php" id="registerbutton" class="button" rel="nohtml">Registrar</a-->
+
+    </form>
+    <span ng-bind="exito"></span>
+    >>>><span ng-bind="datos.collection_location"></span>
+</div>
+
+
+<script>
+var app = angular.module('crear_colecciones',[]);
+
+app.config(function($httpProvider) {
+    $httpProvider.defaults.headers.post['X-CSRFToken'] = $('input[name=csrfmiddlewaretoken]').val();
+    });
+
+
+
+app.controller('colecciones', function($scope, $http) {
+    $scope.titulos={%autoescape off%}{{titulos}}{%endautoescape%};
+    $scope.ubicaciones={%autoescape off%}{{ubicaciones}}{%endautoescape%};
+    $scope.datos={};
+    $scope.NombreExiste= -1;
+    $scope.RutaExiste=-1;
+    $scope.errores=null;
+    $scope.exito=0;
+    $scope.dataLoaded = true;
+    $scope.$watch('datos.collection_name',
+        function(newVal, oldVal, scope){
+            if (newVal === oldVal){
+                $scope.NombreExiste = $scope.NombreExiste
+            }
+            else {
+                $scope.NombreExiste = ($scope.titulos.indexOf(newVal))
+            }
+        }
+    );
+    $scope.datos.collection_description="";
+    $scope.enviar=function(datos){
+        $scope.dataLoaded = false;
+        $scope.datos.collection_description=tinyMCE.get('id_collection_description').getContent();
+
+        $http({
+            method  :'POST',
+            url:'.',
+            data : $scope.datos, // pass in data as strings
+        }).then(successCallback, errorCallback);
+
+
+        function successCallback(data, status, headers, config){
+                $scope.coleccion=$scope.datos.collection_name;
+                // $scope.datos={};
+                $scope.exito=1;
+                $scope.dataLoaded = true;
+            };
+
+        function errorCallback(data, status, headers, config){
+                $scope.coleccion=$scope.datos.collection_name;
+                $scope.exito=-1;
+                $scope.errores=data.data;
+                $scope.dataLoaded = true;
+            };
+
+     };
+});
+</script>
+{%endblock%}
+
+
+{% block footerscripts %}
+
+   {{ block.super }}
+
+
+{% endblock %}
+
+
