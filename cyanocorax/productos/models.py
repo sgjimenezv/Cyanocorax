@@ -8,3 +8,9 @@ class Producto(Document):
     descripcion = StringField()
     referencia = StringField()
     enlace = URLField()
+
+    def __unicode__(self):
+        return self.titulo
+
+    def __str__(self):
+        return self.titulo

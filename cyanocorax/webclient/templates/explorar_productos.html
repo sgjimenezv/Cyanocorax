@@ -6,29 +6,21 @@
 
 
 <div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Título</th>
-        <th>Tipo</th>
-        <th>Investigación</th>
-        <th>Corpus</th>
-      </tr>
-    </thead>
-    <tbody>
+ <table id="table"
+           data-toggle="table"
+           data-url="/productos/json"
+           data-filter-control="true">
+        <thead>
+        <tr>
+            <th data-field="titulo" data-filter-control="input">Título</th>
+            <th data-field="tipo" data-filter-control="input">Tipo</th>
+            <th data-field="descripcion" data-filter-control="select">Investigación</th>
+            <th data-field="price2" data-filter-control="select">Corpus</th>
+        </tr>
+        </thead>
 
+ 
 
-{% for producto in productos %}
-<tr>
-  <td> {{producto.titulo}} </td>
-  <td> {{producto.tipo}} </td>
-  <td> </td>
-  <td> </td>
-
-</tr>
-{% endfor %}
-
-   </tbody>
   </table>
 </div>
 {% endblock%}

@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^login/$',  'webclient.views.ingreso'),
     url(r'^logout/$', 'django.contrib.auth.views.logout',  {'next_page': '/'}),
     url(r'^productos/explorar$', 'productos.views.explorar_productos'),
+    url(r'^productos/json$', 'productos.views.explorar_productos_json'),
 ]

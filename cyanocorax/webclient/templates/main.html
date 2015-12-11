@@ -15,9 +15,9 @@
         <title>Cyanocorax:: Plataforma para manejo de corpus orales</title>
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'js/bootstrap/css/bootstrap.min.css' %}">
         <!-- Custom styles for this template -->
-        <link rel="stylesheet" href="{% static 'bootstrap/css/dashboard.css' %}">
+        <link rel="stylesheet" href="{% static 'js/bootstrap/css/dashboard.css' %}">
         <!-- Custom styles for this proyect -->
         <link rel="stylesheet" href="{% static 'css/general.css' %}">
 
@@ -200,12 +200,14 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         {%block footerscripts%}
-        <script src="{%static 'jquery/jquery.min.js'%}"></script>
-        <script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
+        <script src="{%static 'js/jquery/jquery.min.js'%}"></script>
+        <script src="{%static 'js/bootstrap/js/bootstrap.min.js'%}"></script>
+        <script src="{%static 'js/bower_components/bootstrap-table/dist/bootstrap-table.min.js'%}"></script>
+        <script src="{%static 'js/bower_components/bootstrap-table/dist/extensions/filter-control/bootstrap-table-filter-control.js'%}"></script>
         <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-        <script src="{%static 'bootstrap/assets/js/vendor/holder.min.js'%}"></script>
+        <script src="{%static 'js/bootstrap/assets/js/vendor/holder.min.js'%}"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="{%static 'bootstrap/assets/js/ie10-viewport-bug-workaround.js'%}"></script>
+        <script src="{%static 'js/bootstrap/assets/js/ie10-viewport-bug-workaround.js'%}"></script>
         {%endblock footerscripts%}
 
 

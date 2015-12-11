@@ -5,3 +5,9 @@ cyanocorax/webclient/fixtures/auth.json
 cyanocorax/webclient/fixtures/usuarios.json
 #cyanocorax/static
 #cyanocorax/*/static
+
+### Bower ###
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
