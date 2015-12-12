@@ -1,11 +1,17 @@
 {% extends "main.html" %}
 {% block contenido %}
 
-<h1 style="text-align: center"> Listado general de productos académicos </h1>
+{% if objetivo == 'Detalles' %}
+<h1 style="text-align: center"> Listado  de productos académicos </h1>
+{% endif %}
+{% if objetivo == 'Modificar' %}
+<h1 style="text-align: center"> Seleccione el producto que desea modificar </h1>
+{% endif %}
 <hr/>
 
 
 <div class="table-responsive">
+<<<<<<< HEAD
  <table id="table"
            data-toggle="table"
            data-url="/productos/json.js"
@@ -19,9 +25,43 @@
         </tr>
         </thead>
         <tbody></tbody>
+=======
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Tipo</th>
+        <th>Investigación</th>
+        <th>Corpus</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+>>>>>>> 7c09c202f54124f20220abf399a77f738b0c78e1
 
  
 
+<<<<<<< HEAD
+=======
+{% for producto in productos %}
+<tr>
+  <td> {{producto.titulo}} </td>
+  <td> {{producto.tipo}} </td>
+  <td> </td>
+  <td> </td>
+  <td>
+    {% if objetivo == 'Modificar' %}
+      <a href=/productos/modifcar/{{producto.id}}>Modificar</a>
+       |
+    {% endif %}
+       <a href=/productos/detalles/?producto_id={{producto.id}}/>Ver detalles</a>
+  </td>
+
+</tr>
+{% endfor %}
+
+   </tbody>
+>>>>>>> 7c09c202f54124f20220abf399a77f738b0c78e1
   </table>
 </div>
 {% endblock%}

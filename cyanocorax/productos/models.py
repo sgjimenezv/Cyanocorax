@@ -9,8 +9,8 @@ class Producto(Document):
     referencia = StringField()
     enlace = URLField()
 
-    def __unicode__(self):
-        return self.titulo
-
-    def __str__(self):
-        return self.titulo
+    meta = {
+        'indexes': [
+            {'fields': ('titulo', 'tipo', 'referencia'), 'unique': True}
+        ]
+    }
